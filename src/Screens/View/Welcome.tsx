@@ -8,6 +8,7 @@ import { Image, StyleSheet, Text, View, Pressable } from 'react-native';
 import { Items } from '../../Utils/Constant';
 import Routes from '../../Navigation/Routes';
 import { styles } from '../Style/Welcome';
+import string from '../../Utils/string';
 
 const Welcome = () => {
     const navigation = useNavigation();
@@ -30,15 +31,15 @@ const Welcome = () => {
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image source={require('../../assets/images/done/Group42.png')} style={styles.image} />
-                <Text style={styles.text}>All Set</Text>
+                <Text style={styles.text}>{string.allset}</Text>
             </View>
             <View>
                 <Text style={styles.title}>
-                    You'll be signed into your account in a moment. If nothing happens, click continue
+                    {string.welcomeTitle}
                 </Text>
             </View>
             <Pressable style={styles.press} onPress={handleNextPress}>
-                <Text style={styles.buttonText}>Continue</Text>
+                <Text style={styles.buttonText}>{string.continue}</Text>
                 <FontAwesomeIcon style={styles.arrow1} icon={faArrowRightLong} size={28} />
             </Pressable>
         </View>

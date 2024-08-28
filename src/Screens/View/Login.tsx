@@ -7,6 +7,7 @@ import { _signInWithGoogle } from '../../config';
 import Routes from '../../Navigation/Routes';
 import { styles } from '../Style/Login';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import string from '../../Utils/string';
 
 const { width } = Dimensions.get('window');
 
@@ -90,20 +91,20 @@ const Login = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>
-                Enter your Name and Password
+                {string.LoginTitle}
             </Text>
             <View style={styles.phone}>
-                <Text style={styles.textemail}>Name</Text>
+                <Text style={styles.textemail}>{string.Name}</Text>
                 <TextInput style={styles.emailtextInput}
                     value={email}
                     onChangeText={(text) => {setEmail(text)
                         setEmailError('')
                     }}
-                    placeholder="Enter your name"
+                    placeholder={string.emailPlaceholder}
                     placeholderTextColor="#e9e9e9"
                 />
                 {emailError ? <Text style={styles.error}>{emailError}</Text> : null}
-                <Text style={styles.textpass}>Password</Text>
+                <Text style={styles.textpass}>{string.Password}</Text>
                 <TextInput style={styles.inputpass}
                     value={password}
                     onChangeText={(text) => {
@@ -112,7 +113,7 @@ if(text.length>8){
 }
                         setPassword(text)
                     }}
-                    placeholder="Enter your password"
+                    placeholder={string.passPlaceholder}
                     placeholderTextColor="#e9e9e9"
                     secureTextEntry={true}
                 />
@@ -120,12 +121,11 @@ if(text.length>8){
             </View>
             <Pressable style={styles.button} onPress={handleNextPress}>
                 <FontAwesomeIcon style={styles.arrow1} icon={faArrowRightLong} size={width * 0.07} />
-                <Text style={styles.buttonText}>Next</Text>
+                <Text style={styles.buttonText}>{string.name}</Text>
                 <FontAwesomeIcon style={styles.arrow} icon={faArrowRightLong} size={width * 0.07} />
             </Pressable>
             <Text style={styles.information}>
-                By proceeding, you consent to get calls, Whatsapp or SMS messages,
-                including by automated means, from Uber and its affiliates to the number provided.
+                {string.infoLogin}
             </Text>
             <View style={styles.mainView}>
                 <View style={styles.line1} />
@@ -140,7 +140,7 @@ if(text.length>8){
                     style={styles.image}
                     resizeMode="contain"
                 />
-                <Text style={styles.touch2}>Continue with Google</Text>
+                <Text style={styles.touch2}>{string.continuewithGoogle}</Text>
             </Pressable>
         </View>
     );

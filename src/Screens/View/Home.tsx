@@ -10,6 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 import Routes from '../../Navigation/Routes';
 import { AddNewItem } from '../../Components/AddNewItem';
 import notifee, { TimestampTrigger, TriggerType } from '@notifee/react-native';
+import string from '../../Utils/string';
 
 const Home = () => {
 
@@ -137,7 +138,7 @@ const Home = () => {
           <Image style={styles.plusIcon} source={Images.plusIcon}></Image>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => handleLogout()} style={{ marginRight: Responsive.hp(1) }}>
-          <Text style={{ fontWeight: "500", fontSize: 17 }}>Logout</Text>
+          <Text style={{ fontWeight: "500", fontSize: 17 }}>{string.logout}</Text>
         </TouchableOpacity>
       </View>
 

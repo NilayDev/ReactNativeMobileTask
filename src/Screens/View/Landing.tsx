@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Image, Text, TextInput, TouchableOpacity, FlatList, TouchableWithoutFeedback, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import string from '../../Utils/string';
 
 const countries = [
     { image: require('../../../assets/images/flags/GB.png'), code: 'GB', name: 'United Kingdom', dialCode: '+44' },
@@ -55,7 +56,7 @@ const Landing = () => {
                 style={styles.image}
                 resizeMode="cover"
             />
-            <Text style={styles.text}>Use your Uber account to get started</Text>
+            <Text style={styles.text}>{string.landingTitle}</Text>
             <View style={styles.phone}>
                 <TouchableOpacity style={styles.countryPicker} onPress={() => setIsModalVisible(true)}>
                     <Image source={selectedCountry.image} style={styles.flag} />
@@ -90,7 +91,7 @@ const Landing = () => {
                                         <TouchableOpacity style={styles.countryButton} onPress={() => handleCountrySelect(item)}>
                                             <Image source={item.image} style={styles.flag} />
                                             <Text style={styles.countryName}>   {item.dialCode}    {item.name}</Text>
-                                            <Pressable style={styles.press}>Next</Pressable>
+                                            <Pressable style={styles.press}>{string.next}</Pressable>
                                         </TouchableOpacity>
                                     )}
                                 />
