@@ -5,6 +5,7 @@ import { Images } from '../../Utils/Images';
 import Swiper from 'react-native-swiper';
 import { useNavigation } from '@react-navigation/native';
 import Routes from '../../Navigation/Routes';
+import string from '../../Utils/string';
 
 
 export default function OnBording() {
@@ -41,7 +42,7 @@ export default function OnBording() {
         </View>
       </Swiper>
       {onIndexChange === 2 ? <TouchableOpacity onPress={() => { LoginScreen()}} style={styles.nextBtnCon}>
-        <Text style={styles.netxtButton}>Next</Text>
+        <Text style={styles.netxtButton}>{string.next}</Text>
       </TouchableOpacity> : <></>}
     </View>
   )
